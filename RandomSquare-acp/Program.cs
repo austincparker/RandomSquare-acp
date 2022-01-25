@@ -14,11 +14,22 @@ Console.WriteLine();
 
 List<int> numList = new List<int>();
 
-for (int ctr = 0; ctr <= 4; ctr++)
-    numList.Add(rand.Next(50, 101));
+Console.WriteLine("Make the numbers");
+
+for (int ctr = 0; ctr <= 5; ctr++)
+    numList.Add(rand.Next(1, 10));
 foreach (int i in numList)
     Console.WriteLine(i);
+
+Console.WriteLine("Square the numbers");
 
 IEnumerable<int> sampleNumbersSquared = numList.Select(number => number * number);
 foreach (int j in sampleNumbersSquared)
     Console.WriteLine(j);
+
+Console.WriteLine("Take out odd numbers");
+
+
+var onlyEvens = sampleNumbersSquared.Where(n => n % 2 == 0);
+foreach (int k in onlyEvens)
+    Console.WriteLine(k);

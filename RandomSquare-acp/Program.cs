@@ -23,13 +23,17 @@ foreach (int i in numList)
 
 Console.WriteLine("Square the numbers");
 
-IEnumerable<int> sampleNumbersSquared = numList.Select(number => number * number);
+var sampleNumbersSquared = numList.Select(number => number * number);
 foreach (int j in sampleNumbersSquared)
     Console.WriteLine(j);
 
-Console.WriteLine("Take out odd numbers");
+Console.WriteLine("Only Even Numbers");
 
 
 var onlyEvens = sampleNumbersSquared.Where(n => n % 2 == 0);
 foreach (int k in onlyEvens)
     Console.WriteLine(k);
+
+var onlyOdds = sampleNumbersSquared.Where(n => n % 2 != 0);
+
+Console.WriteLine($"Odd Numbers Only: {string.Join(", ", onlyOdds)}");
